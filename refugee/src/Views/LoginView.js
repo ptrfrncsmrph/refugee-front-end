@@ -33,7 +33,7 @@ class LoginView extends React.Component {
                 localStorage.setItem('jwt', res.data.token);
             })
             .catch(err => console.log(err))
-        }
+    }
     
 
 

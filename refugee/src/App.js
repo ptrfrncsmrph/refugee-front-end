@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {Route, NavLink} from 'react-router-dom';
 
 import LoginView from './Views/LoginView';
+import StoryFormView from './Views/StoryFormView';
 
 import './App.css';
 
@@ -20,6 +21,10 @@ class App extends Component {
           render={props => <LoginView {...props} /> }
         />
         
+        <Route exact path="/story-form"
+          render={props => <StoryFormView {...props} />}
+        />
+
       </div>
     );
   }
