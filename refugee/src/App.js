@@ -13,8 +13,10 @@ class App extends Component {
       <div className="App">
         <nav>
           <div className="nav-links">
-            <NavLink exact to="/story-form">Share Your Story</NavLink>
             <NavLink exact to="/">Home</NavLink>
+
+            <NavLink exact to="/story-form">Share Your Story</NavLink>
+            
             <NavLink exact to="/login">Admin Login</NavLink>
           </div>
         </nav>

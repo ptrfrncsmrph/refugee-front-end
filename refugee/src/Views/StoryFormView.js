@@ -13,7 +13,7 @@ class AddNewStory extends React.Component {
     };
 
     handleChange = e => {
-        this.setSate({
+        this.setState({
             submission: {
                 ...this.state.submission,
                 [e.target.name]: e.target.value

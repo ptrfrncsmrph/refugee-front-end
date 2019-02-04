@@ -24,22 +24,10 @@ function Login(props) {
                         step="1"
                         onChange={props.handleChanges} 
                     />
-                <InputGroupAddon addonType="append"><Button color="secondary">Log In</Button></InputGroupAddon>
+                <InputGroupAddon addonType="append">
+                    <Button color="secondary">Log In</Button>
+                </InputGroupAddon>
                 </InputGroup>
-                
-                {/* <input
-                    type="text"
-                    name="username"
-                    placeholder="username"
-                    onChange={props.handleChanges} 
-                /> */}
-
-                {/* <input 
-                     type="text"
-                     name="password"
-                     placeholder="password"
-                     onChange={props.handleChanges}
-                /> */}
 
                 
             </form>
