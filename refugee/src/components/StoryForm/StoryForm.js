@@ -1,27 +1,36 @@
 import React from 'react';
 
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 function StoryForm(props) {
 
     return (
         <div className="StoryForm">
-
-            <input 
-                type="text"
-                name="title"
-                placeholder="Name - please feel free to remain anonymous"
-                onChange={props.handleChange}
-                value={props.submission.title}
-            />
-
-            <input 
-                type="text"
-                name="text"
-                placeholder="Share your story"
-                onChange={props.handleChange}
-                value={props.submission.text}
-            />
-
-
+            <Form>
+                <FormGroup>
+                    <Label for="name-title">Name</Label>
+                    <Input 
+                        type="text" 
+                        name="title" 
+                        placeholder="please feel free to remain anonymous by entering a false name" 
+                        onChange={props.handleChange}
+                        value={props.submission.title}
+                        />
+                </FormGroup>
+            
+                <FormGroup>
+                    <Label for="submission-text">Share your story</Label>
+                    <Input 
+                        type="textarea" 
+                        name="text" 
+                        placeholder="..."
+                        onChange={props.handleChange}
+                        value={props.submission.text}
+                    />
+                </FormGroup>
+                <Button>Submit</Button>
+           
+            </Form>
 
         </div>
     )

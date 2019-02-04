@@ -11,11 +11,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="nav-links">
-          <NavLink exact to="/story-form">Share Your Story</NavLink>
-          <NavLink exact to="/">Home</NavLink>
-          <NavLink exact to="/login">Admin Login</NavLink>
-        </div>
+        <nav>
+          <div className="nav-links">
+            <NavLink exact to="/story-form">Share Your Story</NavLink>
+            <NavLink exact to="/">Home</NavLink>
+            <NavLink exact to="/login">Admin Login</NavLink>
+          </div>
+        </nav>
 
         <Route exact path="/login"
           render={props => <LoginView {...props} /> }

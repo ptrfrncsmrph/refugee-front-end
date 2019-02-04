@@ -9,6 +9,8 @@ import logger from 'redux-logger';
 
 import rootReducer from './store/reducers/index';
 
+import 'bootstrap/dist/css/bootstrap.css';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

@@ -15,7 +15,7 @@ class AddNewStory extends React.Component {
     handleChange = e => {
         this.setSate({
             submission: {
-                ...this.state.smurf,
+                ...this.state.submission,
                 [e.target.name]: e.target.value
             }
         });
