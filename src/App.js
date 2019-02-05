@@ -10,7 +10,8 @@ import "./App.css"
 
 class App extends Component {
   componentDidMount() {
-    console.log(window.location.search)
+    const params = new URLSearchParams(window.location.search)
+    params.has("route") && console.log("HAS A ROUTE", params.get("route"))
   }
   render() {
     return (
