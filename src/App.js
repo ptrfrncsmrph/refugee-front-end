@@ -9,10 +9,6 @@ import IndivStoryView from "./Views/IndivStoryView"
 import "./App.css"
 
 class App extends Component {
-  componentDidMount() {
-    const params = new URLSearchParams(window.location.search)
-    params.has("route") && console.log("HAS A ROUTE", params.get("route"))
-  }
   render() {
     return (
       <div className="App">
