@@ -1,5 +1,5 @@
 const main = () => {
-  console.log("Hellow")
+  console.log(window.location)
 }
 
 window.onload = main
