@@ -10,7 +10,7 @@ function StoryList(props) {
 
     return (
         <div className="story-list">
-            {props.stories.map(story => (
+            {props.stories.map((story) => (
                 <div
                     onClick={e => routeToStory(e, story)}
                     className="story-card"

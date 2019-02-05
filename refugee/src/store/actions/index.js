@@ -15,7 +15,7 @@ export const SUBMITTING_FAIL = 'SUBMITTING_FAIL';
 export const getStories = () => dispatch => {
     dispatch({type: GET_STORIES});
     axios
-        .get('')
+        .get('https://ancient-ocean-58774.herokuapp.com/stories')
         .then(res => 
             dispatch({type: GET_STORIES_SUCCESS, payload: res.data}))
         .catch(err => 
@@ -23,12 +23,12 @@ export const getStories = () => dispatch => {
 };
 
 
-//fucntionality for user to submit story into approval queue
+//functionality for user to submit story into approval queue
 
 export const submitStory = story => dispatch => {
     dispatch({type: SUBMITTING_STORY_START});
     axios
-        .post('', story)
+        .post('https://ancient-ocean-58774.herokuapp.com/stories', story)
         .then(res => {
             dispatch({type: SUBMITTING_STORY_SUCCESS, payload: res.data})
         })

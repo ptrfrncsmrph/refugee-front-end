@@ -7,7 +7,7 @@ import StoryForm from '../components/StoryForm/StoryForm';
 
 class AddNewStory extends React.Component {
     state= {
-        submission: {
+        story: {
             id: '',
             title: '',
             text: '',
@@ -17,15 +17,15 @@ class AddNewStory extends React.Component {
 
     handleChange = e => {
         this.setState({
-            submission: {
-                ...this.state.submission,
+            story: {
+                ...this.state.story,
                 [e.target.name]: e.target.value
             }
         });
     };
 
     addStory = () => {
-        this.props.submitStory(this.state.submission);
+        this.props.submitStory(this.state.story);
     };
 
     render() {
@@ -33,7 +33,7 @@ class AddNewStory extends React.Component {
             <div>
                 <StoryForm 
                     handleChange={this.handleChange}
-                    submission={this.state.submission}
+                    story={this.state.story}
                     addStory={this.addStory}
                 />
 

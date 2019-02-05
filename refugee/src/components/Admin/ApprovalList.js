@@ -10,12 +10,10 @@ function ApprovalList(props) {
     return (
         <div className="story-list">
             {props.stories.filter((story) => {
-                story.approved === false
-                <div
-                    onClick={e => routeToStory(e, story)}
-                >
+               return story.approved === false
+               
 
-                </div>
+                
             })}
         </div>
     )

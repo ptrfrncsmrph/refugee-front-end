@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 
-import {adminLogIn} from '../store/actions';
 
-import LoginForm from '../components/Login/LoginForm';
 
-class LoginView extends React.Component {
+import RegisterForm from '../components/Login/RegisterForm';
+
+class RegisterView extends React.Component {
     state= {
         login: {
             
@@ -15,18 +15,23 @@ class LoginView extends React.Component {
     };
 
     handleChanges = e => {
-        this.setState({ [e.target.name]: e.target.value});
+        this.setState({
+            login: {
+                ...this.state.login,
+                [e.target.name]: e.target.value
+            }
+        });
+        
     }
 
     
 
     handleSubmit = event => {
         event.preventDefault();
-        
-        const endpoint = 'https://ancient-ocean-58774.herokuapp.com/login';
-
+        // const endpoint = `https://ancient-ocean-58774.herokuapp.com/register`;
+    
         axios
-            .post(endpoint, this.state)
+            .post(`https://ancient-ocean-58774.herokuapp.com/register`, this.state.login)
             .then(res => {
                 console.log('response', res.data.token)
                 localStorage.setItem('jwt', res.data.token);
@@ -38,12 +43,13 @@ class LoginView extends React.Component {
 
     render() {
         return (
-            <LoginForm 
+            <RegisterForm 
                 handleChanges={this.handleChanges}
                 submitLogin={this.handleSubmit}
+                login={this.state.login}
             />
         );
     }
 }
 
-export default LoginView;
+export default RegisterView;

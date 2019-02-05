@@ -27,7 +27,7 @@ function reducer(state = initialState, action) {
         case  GET_STORIES_SUCCESS:
         return {
             ...state,
-            login: action.payload,
+            stories: action.payload.s,
             gettingStories: false,
         }
         case GET_STORIES_FAILURE:

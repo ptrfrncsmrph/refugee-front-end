@@ -19,7 +19,7 @@ function StoryForm(props) {
                         name="title" 
                         placeholder="please feel free to remain anonymous by entering a false name" 
                         onChange={props.handleChange}
-                        value={props.submission.title}
+                        value={props.story.title}
                         />
                 </FormGroup>
             
@@ -30,7 +30,7 @@ function StoryForm(props) {
                         name="text" 
                         placeholder="..."
                         onChange={props.handleChange}
-                        value={props.submission.text}
+                        value={props.story.text}
                     />
                 </FormGroup>
                 <Button onClick={handleClick}>Submit</Button>
