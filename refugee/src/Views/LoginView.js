@@ -8,7 +8,7 @@ import LoginForm from '../components/Login/LoginForm';
 class LoginView extends React.Component {
     state= {
         login: {
-            loggedIn: false,
+            
             username: '',
             password: ''
         }
@@ -22,7 +22,8 @@ class LoginView extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        const endpoint = `${process.env.REACT_APP_API_URL}/api/login`;
+        //const endpoint = `${process.env.REACT_APP_API_URL}/api/login`;
+        const endpoint = 'http://localhost:4000/login';
 
         axios
             .post(endpoint, this.state)
