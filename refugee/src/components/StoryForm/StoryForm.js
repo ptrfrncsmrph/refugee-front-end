@@ -4,6 +4,11 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 function StoryForm(props) {
 
+    const handleClick = e => {
+        e.preventDefault();
+        props.addStory();
+    }
+
     return (
         <div className="StoryForm">
             <Form>
@@ -28,7 +33,7 @@ function StoryForm(props) {
                         value={props.submission.text}
                     />
                 </FormGroup>
-                <Button>Submit</Button>
+                <Button onClick={handleClick}>Submit</Button>
            
             </Form>
 

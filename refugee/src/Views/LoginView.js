@@ -8,6 +8,7 @@ import LoginForm from '../components/Login/LoginForm';
 class LoginView extends React.Component {
     state= {
         login: {
+            loggedIn: false,
             username: '',
             password: ''
         }
@@ -17,9 +18,6 @@ class LoginView extends React.Component {
         this.setState({ [e.target.name]: e.target.value});
     }
 
-    // submitLogin = () => {
-    //     this.props.adminLogIn(this.state.login);
-    // };
     
 
     handleSubmit = event => {

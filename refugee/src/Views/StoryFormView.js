@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import {submitStory} from '../store/actions';
+
 import StoryForm from '../components/StoryForm/StoryForm';
 
 class AddNewStory extends React.Component {
@@ -8,7 +10,8 @@ class AddNewStory extends React.Component {
         submission: {
             id: '',
             title: '',
-            text: ''
+            text: '',
+            approved: false,
         }
     };
 
@@ -21,12 +24,17 @@ class AddNewStory extends React.Component {
         });
     };
 
+    addStory = () => {
+        this.props.submitStory(this.state.submission);
+    };
+
     render() {
         return (
             <div>
                 <StoryForm 
                     handleChange={this.handleChange}
                     submission={this.state.submission}
+                    addStory={this.addStory}
                 />
 
             </div>
@@ -39,5 +47,5 @@ const mapStateToProps = state => ({});
 
 export default connect(
     mapStateToProps,
-    {}
+    {submitStory}
 )(AddNewStory);

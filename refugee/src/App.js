@@ -4,6 +4,7 @@ import {Route, NavLink} from 'react-router-dom';
 
 import LoginView from './Views/LoginView';
 import StoryFormView from './Views/StoryFormView';
+import IndivStoryView from './Views/IndivStoryView';
 
 import './App.css';
 
@@ -28,6 +29,8 @@ class App extends Component {
         <Route exact path="/story-form"
           render={props => <StoryFormView {...props} />}
         />
+
+        <Route path='/story-list/:id' component={IndivStoryView} />
 
       </div>
     );
