@@ -1,4 +1,4 @@
 #redirects from what the browser requests to what we serve
 
-/story-form name=:name country=:country   /#/story-form
+/story-form name=:name country=:country   /?route=story-form&name=:name&country=:country
 /*            /index.html
