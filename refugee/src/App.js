@@ -7,6 +7,7 @@ import StoryFormView from './Views/StoryFormView';
 import IndivStoryView from './Views/IndivStoryView';
 import RegisterView from './Views/RegisterView';
 import StoryListView from './Views/StoryListView';
+import ApprovalView from './Views/ApprovalView';
 
 import './App.css';
 
@@ -40,6 +41,10 @@ class App extends Component {
         
         <Route exact path="/story-form"
           render={props => <StoryFormView {...props} />}
+        />
+
+        <Route exact path="/approvals"
+          render={props => <ApprovalView {...props} />}
         />
 
         <Route path='/story-list/:id' component={IndivStoryView} />

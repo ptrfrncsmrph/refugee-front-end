@@ -10,7 +10,7 @@ function ApprovalList(props) {
     return (
         <div className="story-list">
             {props.stories.filter((story) => {
-               return story.approved === false
+               return story.approved === false;
                
 
                 

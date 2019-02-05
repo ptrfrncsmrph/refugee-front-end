@@ -35,11 +35,12 @@ class LoginView extends React.Component {
             .then(res => {
                 console.log('response', res.data.token)
                 localStorage.setItem('jwt', res.data.token);
-                
-                
-
+                //below code redirects user upon successful login
+                window.location = "/approvals";
+            
             })
             .catch(err => console.log(err))
+            window.location = "/";
         
     }
     
