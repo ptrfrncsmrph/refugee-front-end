@@ -1,4 +1,4 @@
 #redirects from what the browser requests to what we serve
 
-/story-form   /index.html?q=story-form
+/story-form   /index.html/#/story-form
 /*            /index.html
