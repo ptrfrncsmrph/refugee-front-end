@@ -10,19 +10,23 @@ function Login(props) {
                 <InputGroup>
                     <InputGroupAddon addonType="prepend">Username</InputGroupAddon>
                     <Input 
+                    name="username"
                         placeholder=""
                         type="text"
-                        onChange={props.handleChanges} 
+                        onChange={props.handleChanges}
+                        value={props.login.username} 
                     />
                 </InputGroup>
                 <br />
                 <InputGroup>
                 <InputGroupAddon addonType="prepend">Password</InputGroupAddon>
-                    <Input 
+                    <Input
+                        name="password" 
                         placeholder="" 
                         type="text" 
                         step="1"
-                        onChange={props.handleChanges} 
+                        onChange={props.handleChanges}
+                        value={props.login.password} 
                     />
                 <InputGroupAddon addonType="append">
                     <Button color="secondary">Log In</Button>

@@ -15,7 +15,12 @@ class LoginView extends React.Component {
     };
 
     handleChanges = e => {
-        this.setState({ [e.target.name]: e.target.value});
+        this.setState({ 
+            login: {
+                ...this.state.login,
+                [e.target.name]: e.target.value
+            }
+        });   
     }
 
     
@@ -26,21 +31,26 @@ class LoginView extends React.Component {
         const endpoint = 'https://ancient-ocean-58774.herokuapp.com/login';
 
         axios
-            .post(endpoint, this.state)
+            .post(endpoint, this.state.login)
             .then(res => {
                 console.log('response', res.data.token)
                 localStorage.setItem('jwt', res.data.token);
+                
+                
+
             })
             .catch(err => console.log(err))
+        
     }
     
-
+//props passed to LoginForm
 
     render() {
         return (
             <LoginForm 
                 handleChanges={this.handleChanges}
                 submitLogin={this.handleSubmit}
+                login={this.state.login}
             />
         );
     }

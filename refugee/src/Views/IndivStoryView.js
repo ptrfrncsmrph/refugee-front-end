@@ -16,8 +16,9 @@ class IndivStoryView extends React.Component {
     render() {
         return (
             <Story 
-                story={this.props.stories}
+                stories={this.props.stories}
                 match={this.props.match}
+                history={this.props.history}
             />
         )
     }

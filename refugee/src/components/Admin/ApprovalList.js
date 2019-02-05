@@ -18,3 +18,5 @@ function ApprovalList(props) {
         </div>
     )
 }
+
+export default ApprovalList;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, NavLink } from "react-router-dom";
 
-function Story({stories, match}) {
-    const story = stories.find(submission => `${submission.id}` === match.params.id)
+function Story({stories, history, match}) {
+    const story = stories.find(submission => `${submission.id}` === match.params.id);
 
     return (
         <div className="IndivStory">

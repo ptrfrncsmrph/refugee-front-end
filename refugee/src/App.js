@@ -34,9 +34,9 @@ class App extends Component {
           render={props => <LoginView {...props} /> }
         />
 
-        {/* <Route exact path="/register"
+        <Route exact path="/register"
           render={props => <RegisterView {...props} /> }
-        /> */}
+        />
         
         <Route exact path="/story-form"
           render={props => <StoryFormView {...props} />}
