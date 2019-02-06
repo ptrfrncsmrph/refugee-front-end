@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, NavLink } from "react-router-dom";
+
 
 function Story({stories, history, match}) {
     const story = stories.find(submission => `${submission.id}` === match.params.id);
@@ -15,9 +15,7 @@ function Story({stories, history, match}) {
             <div>
                 <p>{story.text}</p>
             </div>
-            <nav className="story-sub-nav">
-                <NavLink exact to={`/story-list/${story.id}`}>Read More...</NavLink>
-            </nav>
+            
         </div>
         
     );

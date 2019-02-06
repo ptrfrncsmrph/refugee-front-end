@@ -8,6 +8,7 @@ import IndivStoryView from './Views/IndivStoryView';
 import RegisterView from './Views/RegisterView';
 import StoryListView from './Views/StoryListView';
 import ApprovalView from './Views/ApprovalView';
+import IndivApprovalView from './Views/IndivApprovalView';
 
 import './App.css';
 
@@ -54,8 +55,12 @@ class App extends Component {
           render={props => <ApprovalView {...props} />}
         />
 
-        <Route path='/story-list/:id' 
+        <Route exact path='/story-list/:id' 
           render={props => <IndivStoryView {...props}  />}
+        />
+
+        <Route exact path='/approvals/:id'
+          render={props => <IndivApprovalView {...props} /> }
         />
 
       </div>

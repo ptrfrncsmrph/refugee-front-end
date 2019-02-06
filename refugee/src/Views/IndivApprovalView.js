@@ -3,27 +3,24 @@ import {connect} from 'react-redux';
 
 import {getStories} from '../store/actions';
 
-import ApprovalList from '../components/Admin/ApprovalList';
+import Approval from '../components/Admin/Approval';
 
-class ApprovalView extends React.Component {
-    state = {
-        stories: []
-    };
-
+class IndivApprovalView extends React.Component {
     componentDidMount() {
-        this.props.getStories();
+        if (this.props.stories.length === 0) {
+            this.props.getStories();
+        }
     }
-
 
     render() {
         return (
-            <ApprovalList 
-                history={this.props.history}
-                getItemById={this.props.getItemById}
+            <Approval
                 stories={this.props.stories}
+                match={this.props.match}
             />
         )
     }
+
 }
 
 const mapStateToProps = state => ({
@@ -33,4 +30,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     {getStories}
-)(ApprovalView);
+)(IndivApprovalView);

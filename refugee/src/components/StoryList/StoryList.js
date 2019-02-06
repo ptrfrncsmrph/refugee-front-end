@@ -5,7 +5,6 @@ function StoryList(props) {
     function routeToStory(e, story) {
         e.preventDefault();
         props.history.push(`/story-list/${story.id}`);
-        props.getItemById(story.id)
     }
 
     return (
