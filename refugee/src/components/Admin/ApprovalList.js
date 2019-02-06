@@ -3,7 +3,7 @@ import React from 'react';
 function ApprovalList(props) {
     function routeToStory(e, story) {
         e.preventDefault();
-        props.history.push(`/story-list/${story.id}`);
+        props.history.push(`/approvals/${story.id}`);
         
     }
 

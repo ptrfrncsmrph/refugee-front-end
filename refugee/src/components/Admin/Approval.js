@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Approval({stories, match}) {
+
+function Approval({stories, match, deleteStory, toggleApproval}) {
     const story = stories.find(submission => `${submission.id}` === match.params.id);
 
     return (
@@ -16,8 +17,18 @@ function Approval({stories, match}) {
                     <p>{story.text}</p>
                 </div>
             </div>
-            <button>Approve</button>
-            <button>Delete</button>
+            <button onClick={e => {
+                toggleApproval(e, story.id);
+            }} 
+                className="approve-button"
+            >Approve</button>
+
+            <button onClick={e => {
+                deleteStory(e, story.id);
+            }}
+                className="delete-button"
+            >Delete Post
+            </button>
         </div>
     )
 }
