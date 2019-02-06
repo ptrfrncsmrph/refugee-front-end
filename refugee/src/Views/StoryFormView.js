@@ -8,10 +8,10 @@ import StoryForm from '../components/StoryForm/StoryForm';
 class AddNewStory extends React.Component {
     state= {
         story: {
-            id: '',
+            
             title: '',
             text: '',
-            approved: false,
+            approved: 0,
         }
     };
 

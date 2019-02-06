@@ -12,6 +12,9 @@ import ApprovalView from './Views/ApprovalView';
 import './App.css';
 
 class App extends Component {
+
+  
+
   render() {
     return (
       <div className="App">
@@ -24,8 +27,12 @@ class App extends Component {
             <NavLink exact to="/story-form">Share Your Story</NavLink>
 
             <NavLink exact to="/login">Login</NavLink>
+
+            <NavLink exact to="/approvals">Pending Approval</NavLink>
           </div>
         </nav>
+
+        <button>Log Out</button>
 
         <Route exact path = "/"
           render={props => <StoryListView {...props} /> }
@@ -47,7 +54,9 @@ class App extends Component {
           render={props => <ApprovalView {...props} />}
         />
 
-        <Route path='/story-list/:id' component={IndivStoryView} />
+        <Route path='/story-list/:id' 
+          render={props => <IndivStoryView {...props}  />}
+        />
 
       </div>
     );

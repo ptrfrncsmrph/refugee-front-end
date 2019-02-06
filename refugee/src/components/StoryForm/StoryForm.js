@@ -7,6 +7,7 @@ function StoryForm(props) {
     const handleClick = e => {
         e.preventDefault();
         props.addStory();
+        window.location = "/";
     }
 
     return (

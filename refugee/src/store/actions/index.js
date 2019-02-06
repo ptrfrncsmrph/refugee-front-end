@@ -10,7 +10,7 @@ export const SUBMITTING_FAIL = 'SUBMITTING_FAIL';
 
 
 //functionality for fetching the stories data from the backend
-//used on both the individual story view and the main listed story view
+//used on the individual story view, the main listed story view and the approval list
 
 export const getStories = () => dispatch => {
     dispatch({type: GET_STORIES});
@@ -27,12 +27,13 @@ export const getStories = () => dispatch => {
 
 export const submitStory = story => dispatch => {
     dispatch({type: SUBMITTING_STORY_START});
+    
     axios
         .post('https://ancient-ocean-58774.herokuapp.com/stories', story)
         .then(res => {
             dispatch({type: SUBMITTING_STORY_SUCCESS, payload: res.data})
-        })
-        .catch(err => dispatch({type: SUBMITTING_FAIL, payload: err}));
+        }) 
+        .catch(err => dispatch({type: SUBMITTING_FAIL, payload: err}));        
 };
 
 
